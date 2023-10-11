@@ -1,0 +1,15 @@
+<resources>
+  <string name="app_name">Compose Navigation</string>
+  <string name="person_input">Neue Person</string>
+  <string name="person_detail">Person bearbeiten</string>
+  <string name="people_list">Personen</string>
+  <string name="task_input">Neue Aufgabe</string>
+  <string name="task_detail">Aufgabe bearbeiten</string>
+  <string name="tasks_list">Aufgaben</string>
+  <string name="appointment_input">Neuer Termin</string>
+  <string name="appointment_detail">Termin bearbeiten</string>
+  <string name="appointments_list">Termine</string>
+  <string name="send">Senden</string>
+  <string name="save">Speichern</string>
+  <string name="back">Zurück</string>
+</resources>
