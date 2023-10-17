@@ -45,8 +45,8 @@ fun AppNavHost(
       // ----------------------------------------------------------
       composable(
          route = NavScreen.PeopleList.route,
-         enterTransition = { enterAnimation(duration) },
-         exitTransition  = { exitAnimation(duration)  }
+         enterTransition = { enterTransition(duration) },
+         exitTransition  = { exitTransition(duration)  }
       ) {
          PeopleListScreen(
             navController = navHostController,
@@ -55,8 +55,8 @@ fun AppNavHost(
       }
       composable(
          route = NavScreen.PersonInput.route,
-         enterTransition = { enterAnimation(duration) },
-         exitTransition  = { exitAnimation(duration)  }
+         enterTransition = { enterTransition(duration) },
+         exitTransition  = { exitTransition(duration)  }
       ) {
          PersonInputScreen(
             navController = navHostController,
@@ -68,8 +68,8 @@ fun AppNavHost(
       // ----------------------------------------------------------
       composable(
          route = NavScreen.TasksList.route,
-         enterTransition = { enterAnimation(duration) },
-         exitTransition  = { exitAnimation(duration)  }
+         enterTransition = { enterTransition(duration) },
+         exitTransition  = { exitTransition(duration)  }
       ) {
          TasksListScreen(
             navController = navHostController,
@@ -78,8 +78,8 @@ fun AppNavHost(
       }
       composable(
          route = NavScreen.TaskInput.route,
-         enterTransition = { enterAnimation(duration) },
-         exitTransition  = { exitAnimation(duration)  }
+         enterTransition = { enterTransition(duration) },
+         exitTransition  = { exitTransition(duration)  }
       ) {
          TaskInputScreen(
             navController = navHostController,
@@ -92,8 +92,8 @@ fun AppNavHost(
       // ----------------------------------------------------------
       composable(
          route = NavScreen.AppointmentsList.route,
-         enterTransition = { enterAnimation(duration) },
-         exitTransition  = { exitAnimation(duration)  }
+         enterTransition = { enterTransition(duration) },
+         exitTransition  = { exitTransition(duration)  }
       ) {
          AppointmentsListScreen(
             navController = navHostController,
@@ -102,8 +102,8 @@ fun AppNavHost(
       }
       composable(
          route = NavScreen.AppointmentInput.route,
-         enterTransition = { enterAnimation(duration) },
-         exitTransition  = { exitAnimation(duration)  }
+         enterTransition = { enterTransition(duration) },
+         exitTransition  = { exitTransition(duration)  }
       ) {
          AppointmentInputScreen(
             navController = navHostController,
@@ -113,7 +113,7 @@ fun AppNavHost(
    }
 }
 
-private fun AnimatedContentTransitionScope<NavBackStackEntry>.enterAnimation(
+private fun AnimatedContentTransitionScope<NavBackStackEntry>.enterTransition(
    duration: Int
 ) =
    fadeIn(animationSpec = tween(duration)) +
@@ -122,7 +122,7 @@ private fun AnimatedContentTransitionScope<NavBackStackEntry>.enterAnimation(
       towards = AnimatedContentTransitionScope.SlideDirection.Left
    )
 
-private fun AnimatedContentTransitionScope<NavBackStackEntry>.exitAnimation(
+private fun AnimatedContentTransitionScope<NavBackStackEntry>.exitTransition(
    duration: Int
 ) =
    fadeOut(animationSpec = tween(duration)) +

@@ -23,6 +23,7 @@ import androidx.navigation.NavController
 import de.rogallab.mobile.R
 import de.rogallab.mobile.domain.utilities.logDebug
 import de.rogallab.mobile.domain.utilities.logInfo
+import de.rogallab.mobile.ui.navigation.AppNavigationBar
 import de.rogallab.mobile.ui.navigation.NavScreen
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -48,8 +49,8 @@ fun AppointmentsListScreen(
                // save data
                logInfo(tag, "Reverse Navigation")
                // Navigate to 'AppointmentsList' destination and clear the back stack
-               navController.navigate(route = NavScreen.AppointmentsList.route) {
-                  popUpTo(route = NavScreen.AppointmentsList.route) { inclusive = true }
+               navController.navigate(route = NavScreen.PeopleList.route) {
+                  popUpTo(route = NavScreen.PeopleList.route) { inclusive = true }
                }
             }) {
                Icon(
@@ -72,6 +73,9 @@ fun AppointmentsListScreen(
          ) {
             Icon(Icons.Default.Add, stringResource(id = R.string.appointment_input))
          }
+      },
+      bottomBar = {
+         AppNavigationBar(navController = navController)
       },
       snackbarHost = {
          SnackbarHost(hostState = snackbarHostState) { data ->

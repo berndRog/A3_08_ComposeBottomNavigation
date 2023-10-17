@@ -23,6 +23,7 @@ import androidx.navigation.NavController
 import de.rogallab.mobile.R
 import de.rogallab.mobile.domain.utilities.logDebug
 import de.rogallab.mobile.domain.utilities.logInfo
+import de.rogallab.mobile.ui.navigation.AppNavigationBar
 import de.rogallab.mobile.ui.navigation.NavScreen
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -71,6 +72,9 @@ fun TasksListScreen(
          ) {
             Icon(Icons.Default.Add, stringResource(id = R.string.task_input))
          }
+      },
+      bottomBar = {
+         AppNavigationBar(navController = navController)
       },
       snackbarHost = {
          SnackbarHost(hostState = snackbarHostState) { data ->

@@ -48,9 +48,6 @@ fun AppointmentInputScreen(
    )
 
    val snackbarHostState = remember { SnackbarHostState() }
-   val coroutineScope = rememberCoroutineScope()
-   // testing the snackbar
-   // viewModel.onErrorMessage("Test SnackBar: Fehlermeldung ...")
 
    Scaffold(
       topBar = {
@@ -60,8 +57,8 @@ fun AppointmentInputScreen(
                // save data
                logInfo(tag, "Reverse Navigation")
                // Navigate to 'TasksList' destination and clear the back stack
-               navController.navigate(route = NavScreen.TasksList.route) {
-                  popUpTo(route = NavScreen.TasksList.route) { inclusive = true }
+               navController.navigate(route = NavScreen.AppointmentsList.route) {
+                  popUpTo(route = NavScreen.AppointmentsList.route) { inclusive = true }
                }
             }) {
                Icon(
