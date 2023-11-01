@@ -6,6 +6,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.runtime.Composable
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -23,9 +24,9 @@ import de.rogallab.mobile.ui.tasks.TasksViewModel
 
 @Composable
 fun AppNavHost(
-   peopleViewModel: PeopleViewModel,
-   tasksViewModel: TasksViewModel,
-   appointmentsViewModel: AppointmentsViewModel
+   peopleViewModel: PeopleViewModel = viewModel(),
+   tasksViewModel: TasksViewModel  = viewModel(),
+   appointmentsViewModel: AppointmentsViewModel  = viewModel()
 ) {
    val tag ="ok>AppNavHost         ."
 

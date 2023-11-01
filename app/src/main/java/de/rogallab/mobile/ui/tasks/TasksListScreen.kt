@@ -1,6 +1,7 @@
 package de.rogallab.mobile.ui.tasks
 
 import android.annotation.SuppressLint
+import androidx.activity.compose.BackHandler
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
@@ -17,7 +18,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import de.rogallab.mobile.R
@@ -34,13 +34,17 @@ fun TasksListScreen(
    navController: NavController,
    viewModel: TasksViewModel,
 ) {
-//                    12345678901234567890123
    val tag: String = "ok>TasksListScreen    ."
 
-   // testing the snackbar
-   // viewModel.onErrorMessage("Test SnackBar: Fehlermeldung ...")
    val snackbarHostState = remember { SnackbarHostState() }
-   val coroutineScope = rememberCoroutineScope()
+
+   BackHandler(
+      enabled = true,
+      onBack = {
+         logInfo(tag, "Back Navigation (Abort)")
+         navController.popBackStack(NavScreen.PeopleList.route,inclusive = false)
+      }
+   )
 
    Scaffold(
       topBar = {
@@ -66,7 +70,6 @@ fun TasksListScreen(
             containerColor = MaterialTheme.colorScheme.tertiary,
             onClick = {
                logDebug(tag, "Forward Navigation: FAB clicked")
-               // Navigate to 'TaskInput' destination and put 'TasksList' on the back stack
                navController.navigate(route = NavScreen.TaskInput.route)
             }
          ) {
@@ -84,6 +87,6 @@ fun TasksListScreen(
             )
          }
       },
-      content = { }
-   ) // end Scaffold
+      content = { val text = "E M P T Y" }
+   )
 }

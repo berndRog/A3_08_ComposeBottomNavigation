@@ -18,7 +18,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
@@ -35,13 +34,9 @@ fun PeopleListScreen(
    navController: NavController,
    viewModel: PeopleViewModel,
 ) {
-
-   val tag: String = "ok>PeopleListScreen   ."
-
-   // testing the snackbar
-   // viewModel.onErrorMessage("Test SnackBar: Fehlermeldung ...")
+   val tag = "ok>PeopleListScreen   ."
    val snackbarHostState = remember { SnackbarHostState() }
-   val coroutineScope = rememberCoroutineScope()
+
 
    Scaffold(
       topBar = {
@@ -87,6 +82,6 @@ fun PeopleListScreen(
          }
       },
 
-      content = { }
-   ) // end Scaffold
+      content = { val text =  "E M P T Y" }
+   )
 }

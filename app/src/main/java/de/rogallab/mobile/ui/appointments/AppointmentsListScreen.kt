@@ -1,6 +1,7 @@
 package de.rogallab.mobile.ui.appointments
 
 import android.annotation.SuppressLint
+import androidx.activity.compose.BackHandler
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
@@ -34,12 +35,16 @@ fun AppointmentsListScreen(
    viewModel: AppointmentsViewModel
 ) {
    val tag = "ok>AppointmentsListScreen  ."
-   logDebug(tag, "Composition")
 
-   // testing the snackbar
-   // viewModel.onErrorMessage("Test SnackBar: Fehlermeldung ...")
    val snackbarHostState = remember { SnackbarHostState() }
-   val coroutineScope = rememberCoroutineScope()
+
+   BackHandler(
+      enabled = true,
+      onBack = {
+         logInfo(tag, "Back Navigation (Abort)")
+         navController.popBackStack(NavScreen.PeopleList.route,inclusive = false)
+      }
+   )
 
    Scaffold(
       topBar = {
@@ -85,6 +90,6 @@ fun AppointmentsListScreen(
             )
          }
       },
-      content = { }
-   ) // end Scaffold
+      content = { "E M P T Y" }
+   )
 }

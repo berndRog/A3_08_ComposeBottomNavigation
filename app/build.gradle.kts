@@ -56,7 +56,7 @@ android {
 
 dependencies {
 
-   implementation("androidx.room:room-common:2.5.2")
+   implementation("androidx.room:room-common:2.6.0")
    // https://developer.android.com/jetpack/androidx/releases/activity
    val activityCompose = "1.8.0"
    implementation("androidx.activity:activity-compose:$activityCompose")
@@ -69,8 +69,8 @@ dependencies {
    // It will greatly simplify the way you define Compose library versions in your
    // Gradle dependencies block.
    // https://developer.android.com/jetpack/compose/bom/bom-mapping
-   val compose = "1.5.3"
-   implementation(platform("androidx.compose:compose-bom:2023.10.00"))
+   val compose = "1.5.4"
+   implementation(platform("androidx.compose:compose-bom:2023.10.01"))
    implementation("androidx.compose.ui:ui")
    implementation("androidx.compose.ui:ui-graphics")
    implementation("androidx.compose.ui:ui-tooling-preview")
@@ -136,10 +136,10 @@ dependencies {
    androidTestImplementation("androidx.test:runner:$runner")
 
    // To use Compose Testing
-   androidTestImplementation(platform("androidx.compose:compose-bom:2023.10.00"))
+   androidTestImplementation(platform("androidx.compose:compose-bom:2023.10.01"))
    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
    debugImplementation("androidx.compose.ui:ui-tooling")
-   val uiTestManifest = "1.5.3"
+   val uiTestManifest = "1.5.4"
    debugImplementation("androidx.compose.ui:ui-test-manifest:$uiTestManifest")
 
    androidTestImplementation("androidx.navigation:navigation-testing:$navigation")

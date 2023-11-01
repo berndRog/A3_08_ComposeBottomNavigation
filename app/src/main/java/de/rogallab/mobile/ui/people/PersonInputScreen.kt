@@ -1,11 +1,7 @@
 package de.rogallab.mobile.ui.people
 
+import android.annotation.SuppressLint
 import androidx.activity.compose.BackHandler
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -19,15 +15,13 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import de.rogallab.mobile.R
 import de.rogallab.mobile.domain.utilities.logInfo
 import de.rogallab.mobile.ui.navigation.NavScreen
 
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PersonInputScreen(
@@ -46,10 +40,6 @@ fun PersonInputScreen(
    )
 
    val snackbarHostState = remember { SnackbarHostState() }
-   val coroutineScope = rememberCoroutineScope()
-   // testing the snackbar
-   // viewModel.onErrorMessage("Test SnackBar: Fehlermeldung ...")
-   // https://stackoverflow.com/questions/72926359/show-snackbar-in-material-design-3-using-scaffold
 
    Scaffold(
       topBar = {
@@ -78,17 +68,6 @@ fun PersonInputScreen(
             )
          }
       },
-      content = { innerPadding ->
-         Column(
-            modifier = Modifier
-               .padding(top = innerPadding.calculateTopPadding())
-               .padding(bottom = innerPadding.calculateBottomPadding())
-               .padding(horizontal = 8.dp)
-               .fillMaxWidth()
-               .verticalScroll(state = rememberScrollState())
-         ) {
-         }
-      }
+      content = {  }
    )
-
 }
